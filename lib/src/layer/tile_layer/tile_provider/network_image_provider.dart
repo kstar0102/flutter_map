@@ -68,7 +68,7 @@ class MapNetworkImageProvider extends ImageProvider<MapNetworkImageProvider> {
   @override
   ImageStreamCompleter loadImage(
     MapNetworkImageProvider key,
-    ImageDecoderCallback decode,
+    DecoderCallback decode,
   ) =>
       MultiFrameImageStreamCompleter(
         codec: _load(key, decode),
@@ -83,7 +83,7 @@ class MapNetworkImageProvider extends ImageProvider<MapNetworkImageProvider> {
 
   Future<Codec> _load(
     MapNetworkImageProvider key,
-    ImageDecoderCallback decode, {
+    DecoderCallback decode, {
     bool useFallback = false,
   }) {
     startedLoading();
